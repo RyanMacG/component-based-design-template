@@ -6,7 +6,7 @@ const circle = {
   strokeWidth: 2
 }
 
-export default class Avatar extends React.Component {
+export default class ProgressCircle extends React.Component {
   static propTypes = {
     progress: string.isRequired,
     break: string.isRequired,
