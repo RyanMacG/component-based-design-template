@@ -52,9 +52,32 @@ export default class Avatar extends React.Component {
           r={circle.radius}
           stroke="#ffdbb4"
           strokeWidth={circle.strokeWidth}
-          fill="#aec6cf"
+          fill="#fff6ed"
         />
-        <path fill="none" strokeWidth="38" stroke="#ffdbb4" d={this.describeArc(this.position(), this.position(), circle.radius-20, 0, this.calculateAngle(this.props.progress))}></path>
+        <path
+          fill="none"
+          strokeWidth="38"
+          stroke="#c7e9c2"
+          d={this.describeArc(
+              this.position(),
+              this.position(),
+              circle.radius-20,
+              this.calculateAngle(100-this.props.break),
+              360
+            )} 
+          />
+        <path
+          fill="none"
+          strokeWidth="38"
+          stroke="rgba(224, 175, 122, 0.8)"
+          d={this.describeArc(
+              this.position(),
+              this.position(),
+              circle.radius-20,
+              0,
+              this.calculateAngle(this.props.progress)
+            )} 
+          />
       </svg>
     )
   }

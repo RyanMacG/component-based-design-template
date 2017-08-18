@@ -27,3 +27,15 @@ storiesOf('ProgressCircle', module)
       break="0"
     />
   )
+  .add('with break period', () =>
+    <ProgressCircle
+      progress="0"
+      break="10"
+    />
+  )
+  .add('with break period and progress', () =>
+    <ProgressCircle
+      progress="95"
+      break="10"
+    />
+  )
