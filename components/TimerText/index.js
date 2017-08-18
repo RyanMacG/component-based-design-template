@@ -1,15 +1,15 @@
 import formatSeconds from 'hhmmss'
 import React from 'react'
-import { string } from 'prop-types'
+import { number } from 'prop-types'
 
 export default class TimerText extends React.Component {
   static propTypes = {
-    breakTime: string.isRequired,
-    timeLeft: string.isRequired,
+    breakTime: number.isRequired,
+    timeLeft: number.isRequired,
   }
 
   isDuringBreak () {
-    return this.props.timeLeft == 0 && this.props.breakTime > 0
+    return this.props.timeLeft <= 0 && this.props.breakTime > 0
   }
 
   isOutOfTime () {
@@ -34,6 +34,7 @@ export default class TimerText extends React.Component {
       <div>
         <style jsx>{`
           span {
+            color: #121e22; 
             cursor: default;
             font-size: 3rem;
             font-weight: 600;

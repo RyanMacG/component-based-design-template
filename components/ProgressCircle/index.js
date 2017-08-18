@@ -1,5 +1,5 @@
 import React from 'react'
-import { string } from 'prop-types'
+import { number } from 'prop-types'
 
 const circle = {
   radius: 60,
@@ -8,8 +8,8 @@ const circle = {
 
 export default class ProgressCircle extends React.Component {
   static propTypes = {
-    progress: string.isRequired,
-    break: string.isRequired,
+    progress: number.isRequired,
+    break: number.isRequired,
   }
 
   position () {

@@ -7,7 +7,7 @@ export default class HomePage extends React.Component {
       <div>
         <style jsx>{`
           .container {
-            background: #AEC6CF;
+            background: #DAE6EA;
             height: 667px;
             width: 375px;
             margin: auto;
@@ -17,8 +17,8 @@ export default class HomePage extends React.Component {
 
         <div className="container">
           <PomodoroTimer 
-            breakLength="300"
-            pomodoroLength="1500"
+            breakLength={300}
+            pomodoroLength={1500}
           />
         </div>
       </div>
