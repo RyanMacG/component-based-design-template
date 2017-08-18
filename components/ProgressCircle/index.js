@@ -45,40 +45,48 @@ export default class ProgressCircle extends React.Component {
 
   render () {
     return (
-      <svg>
-        <circle 
-          cx={this.position()}
-          cy={this.position()}
-          r={circle.radius}
-          stroke="#ffdbb4"
-          strokeWidth={circle.strokeWidth}
-          fill="#fff6ed"
-        />
-        <path
-          fill="none"
-          strokeWidth="38"
-          stroke="#c7e9c2"
-          d={this.describeArc(
-              this.position(),
-              this.position(),
-              circle.radius-20,
-              this.calculateAngle(100-this.props.break),
-              360
-            )} 
+      <div>
+        <style jsx>{`
+          .progress-circle {
+            margin: 0 auto;
+            width: 124px;
+          }
+        `}</style>
+        <svg className="progress-circle">
+          <circle 
+            cx={this.position()}
+            cy={this.position()}
+            r={circle.radius}
+            stroke="#ffdbb4"
+            strokeWidth={circle.strokeWidth}
+            fill="#fff6ed"
           />
-        <path
-          fill="none"
-          strokeWidth="38"
-          stroke="rgba(224, 175, 122, 0.8)"
-          d={this.describeArc(
-              this.position(),
-              this.position(),
-              circle.radius-20,
-              0,
-              this.calculateAngle(this.props.progress)
-            )} 
-          />
-      </svg>
+          <path
+            fill="none"
+            strokeWidth="38"
+            stroke="#c7e9c2"
+            d={this.describeArc(
+                this.position(),
+                this.position(),
+                circle.radius-20,
+                this.calculateAngle(100-this.props.break),
+                360
+              )} 
+            />
+          <path
+            fill="none"
+            strokeWidth="38"
+            stroke="rgba(224, 175, 122, 0.8)"
+            d={this.describeArc(
+                this.position(),
+                this.position(),
+                circle.radius-20,
+                0,
+                this.calculateAngle(this.props.progress)
+              )} 
+            />
+        </svg>
+      </div>
     )
   }
 }
